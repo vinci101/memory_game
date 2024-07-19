@@ -31,3 +31,12 @@ button:hover {
 .back {
   max-width: 80px;
 }
+
+.att {
+  font-size: 10px;
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
