@@ -22,6 +22,8 @@ const App = () => {
       .sort(() => Math.random() - 0.4)
       .map((card) => ({ ...card, id: Math.random() }));
 
+    setChoiceOne(null);
+    setChoiceTwo(null);
     setCards(shuffledCards);
     setTurns(0);
   };
@@ -56,6 +58,10 @@ const App = () => {
     setTurns((prevTurns) => prevTurns + 1);
   };
 
+  useEffect(() => {
+    shuffleCard();
+  }, []);
+
   return (
     <div className="App">
       <h1>Memory Game</h1>
@@ -69,6 +75,7 @@ const App = () => {
             flipped={card === choiceOne || card === choiceTwo || card.matched}
           />
         ))}
+        <p>Turns: {turns}</p>
       </div>
       <a
         href="https://www.flaticon.com/free-icons/origami"
